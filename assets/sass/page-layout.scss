@@ -8,6 +8,7 @@
   overflow: scroll;
   text-align: left;
   vertical-align: middle;
+  place-self: center center;
 }
 
 img {
@@ -62,6 +63,7 @@ main {
 }
 
 footer {
+  @include setupGrid;
   display: grid;
   grid-template-columns: auto auto auto;
   * {

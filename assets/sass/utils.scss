@@ -54,6 +54,12 @@
   justify-content: $justify;
 }
 
+@mixin setupGrid {
+  display: Grid;
+  grid-gap: 5%;
+  align-content: space-evenly;
+  justify-content: space-evenly;
+}
 /*--------------------------------------------------------------
 # Appearance
 --------------------------------------------------------------*/
