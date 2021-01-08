@@ -59,45 +59,14 @@
 }
 
 /*--------------------------------------------------------------
+# Display Options
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+# Appearance
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
 # Flexboxes
 --------------------------------------------------------------*/
-[class^=flex-] {
-  /* base flex properties */
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-}
-
-.flex-row-center {
-  justify-content: center;
-  flex-direction: row;
-}
-
-.flex-row-spaced {
-  justify-content: space-between;
-  flex-direction: row;
-}
-
-.flex-row-even {
-  justify-content: space-evenly;
-  flex-direction: row;
-}
-
-.flex-col-center {
-  justify-content: center;
-  flex-direction: column;
-}
-
-.flex-col-space {
-  justify-content: space-between;
-  flex-direction: column;
-}
-
-.flex-col-even {
-  justify-content: space-evenly;
-  flex-direction: column;
-}
-
 /*--------------------------------------------------------------
 # Positions
 --------------------------------------------------------------*/
@@ -129,7 +98,20 @@
 # Animations
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
-# Page Grid Setup
+# Basic Setup
+--------------------------------------------------------------*/
+* {
+  overflow: scroll;
+  text-align: left;
+  vertical-align: middle;
+}
+
+img {
+  vertical-align: middle;
+}
+
+/*--------------------------------------------------------------
+# Page Setup
 --------------------------------------------------------------*/
 html {
   height: 100%;
@@ -156,36 +138,89 @@ footer {
 }
 
 /*--------------------------------------------------------------
-# Page Sections Display Setup
+# Header, Main, Footer Setup
 --------------------------------------------------------------*/
 header {
+  max-height: 20vh;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: auto 2fr auto;
+  grid-template-areas: "logo" "topnav" "contact";
+}
+header .logo {
+  grid-area: logo;
+}
+header #topnav {
+  grid-area: nav;
+}
+header .contact {
+  grid-area: contact;
+}
+header * {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
   align-content: space-evenly;
   justify-items: center;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 main {
   display: block;
 }
+main * {
+  display: block;
+}
 
-section,
-div {
+footer {
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: auto auto auto;
+  grid-template-areas: "ocf" "contact" "copyright";
+}
+footer .ocf {
+  grid-area: ocf;
+}
+footer .contact {
+  grid-area: contact;
+}
+footer .copyright {
+  grid-area: copyright;
+}
+footer * {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: space-evenly;
+  justify-items: center;
+  justify-content: center;
+}
+
+/*--------------------------------------------------------------
+# Components
+--------------------------------------------------------------*/
+.contact {
+  display: inline-block;
+}
+
+header .logo {
+  display: inline-block;
+}
+header .logo img {
+  height: 100%;
+  max-height: 40px;
+  vertical-align: middle;
+}
+
+main section {
   box-sizing: border-box;
   overflow: hidden;
   margin: 0px;
   padding: 0px;
 }
 
-footer {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
-  align-content: space-evenly;
-  justify-items: center;
-  justify-content: space-between;
+footer .ocf {
+  display: inline-block;
 }

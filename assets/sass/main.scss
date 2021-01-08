@@ -1,14 +1,10 @@
+// @import "vars.scss"; // variables
+// @import "utils.scss"; // helper classes
+
 @import "reset.scss"; // reset browser defined elements
 
 @import "page-layout.scss";
-@import "page-style.scss";
-
-/*--------------------------------------------------------------
-# Styling
---------------------------------------------------------------*/
-img {
-  vertical-align: center;
-}
+@import "styles.scss";
 
 /*--------------------------------------------------------------
 # Debug Use

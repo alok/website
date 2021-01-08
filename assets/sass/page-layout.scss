@@ -1,7 +1,20 @@
 @import "vars.scss"; // variables
 @import "utils.scss"; // helper classes
+
 /*--------------------------------------------------------------
-# Page Grid Setup
+# Basic Setup
+--------------------------------------------------------------*/
+* {
+  overflow: scroll;
+  text-align: left;
+  vertical-align: middle;
+}
+
+img {
+  vertical-align: middle;
+}
+/*--------------------------------------------------------------
+# Page Setup
 --------------------------------------------------------------*/
 html {
   height: 100%;
@@ -28,24 +41,99 @@ footer {
 }
 
 /*--------------------------------------------------------------
-# Page Sections Display Setup
+# Header, Main, Footer Setup
 --------------------------------------------------------------*/
 header {
-  @include FlexRow(space-between);
+  max-height: 20vh;
+
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: auto 2fr auto;
+  grid-template-areas:
+    "logo"
+    "topnav"
+    "contact";
+  .logo {
+    grid-area: logo;
+  }
+  #topnav {
+    grid-area: nav;
+  }
+  .contact {
+    grid-area: contact;
+  }
+
+  * {
+    @include FlexRow;
+  }
 }
 
 main {
   display: block;
-}
-
-section,
-div {
-  box-sizing: border-box;
-  overflow: hidden;
-  margin: 0px;
-  padding: 0px;
+  * {
+    display: block;
+  }
 }
 
 footer {
-  @include FlexRow(space-between);
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: auto auto auto;
+  grid-template-areas:
+    "ocf"
+    "contact"
+    "copyright";
+  .ocf {
+    grid-area: ocf;
+  }
+  .contact {
+    grid-area: contact;
+  }
+  .copyright {
+    grid-area: copyright;
+  }
+  * {
+    @include FlexRow;
+  }
+}
+
+/*--------------------------------------------------------------
+# Components
+--------------------------------------------------------------*/
+// Global Components
+.contact {
+  display: inline-block;
+}
+button {
+}
+
+// Header Components
+header {
+  .logo {
+    display: inline-block;
+    img {
+      height: 100%;
+      max-height: 40px;
+      vertical-align: middle;
+    }
+  }
+}
+
+// Main Components
+main {
+  section {
+    box-sizing: border-box;
+    overflow: hidden;
+    margin: 0px;
+    padding: 0px;
+  }
+}
+
+// Footer Components
+footer {
+  .ocf {
+    display: inline-block;
+  }
+  .copyright {
+  }
 }
