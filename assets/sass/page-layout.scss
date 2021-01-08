@@ -1,3 +1,5 @@
+@import "vars.scss"; // variables
+@import "utils.scss"; // helper classes
 /*--------------------------------------------------------------
 # Page Grid Setup
 --------------------------------------------------------------*/
@@ -45,5 +47,5 @@ div {
 }
 
 footer {
-  @include FlexRow;
+  @include FlexRow(space-between);
 }

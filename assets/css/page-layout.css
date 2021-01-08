@@ -1,17 +1,191 @@
-/* Error: Undefined mixin.
- *    ,
- * 32 |   @include FlexRow(space-between);
- *    |   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
- *    '
- *   assets/sass/page-layout.scss 32:3  root stylesheet */
+/*--------------------------------------------------------------
+# Webfonts Setup
+--------------------------------------------------------------*/
+@font-face {
+  font-family: "RalewayMedium";
+  src: url(../font/Raleway-Medium.ttf) format("truetype");
+}
+@font-face {
+  font-family: "RalewayMediumItalic";
+  src: url(../font/Raleway-MediumItalic.ttf) format("truetype");
+}
+@font-face {
+  font-family: "RalewayExtraLight";
+  src: url(../font/Raleway-ExtraLight.ttf) format("truetype");
+}
+@font-face {
+  font-family: "RalewayExtraLightItalic";
+  src: url(../font/Raleway-ExtraLightItalic.ttf) format("truetype");
+}
+@font-face {
+  font-family: "GothicA1";
+  src: url(../font/GothicA1-Regular.ttf) format("truetype");
+}
+/*--------------------------------------------------------------
+# Variables
+--------------------------------------------------------------*/
+:root {
+  /* Layout */
+  --gutter: 10vw;
+  /* Fonts */
+  --font--main: "RalewayMedium", sans-serif;
+  --font--main-italic: "RalewayMediumItalic", sans-serif;
+  --font--main-light: "RalewayExtraLight", sans-serif;
+  --font--main-light-italic: "RalewayExtraLightItalic", sans-serif;
+  --font--body: "GothicA1", sans-serif;
+  --font--xs: 15vw;
+  --font--m: 32vw;
+  --font--l: 48vw;
+  --font--xl: 72vw;
+  /* Palette. */
+  --palette--theme: #4787c3;
+  --palette--theme-dark: #235d9c;
+  --patette--theme-light: #d0e0f0;
+  --palette--accent: #f65e89;
+  --palette--accent-lighter: #ffcacf;
+  --palette--black: #2a324b;
+  --palette--white: #ffffff;
+  --palette--grey: #f5f5f5;
+  /* Responsive Screen Thersholds */
+  --screen--small: 200px;
+  --screen--medium: 500px;
+  --screen--large: 1000px;
+  /* Z-index */
+  --level--roof: 1000;
+  --level--top: 800;
+  --level--mid: 30;
+  --level--ground: 0;
+  --level--underground: -100;
+}
 
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
+/*--------------------------------------------------------------
+# Flexboxes
+--------------------------------------------------------------*/
+[class^=flex-] {
+  /* base flex properties */
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.flex-row-center {
+  justify-content: center;
+  flex-direction: row;
+}
+
+.flex-row-spaced {
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.flex-row-even {
+  justify-content: space-evenly;
+  flex-direction: row;
+}
+
+.flex-col-center {
+  justify-content: center;
+  flex-direction: column;
+}
+
+.flex-col-space {
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.flex-col-even {
+  justify-content: space-evenly;
+  flex-direction: column;
+}
+
+/*--------------------------------------------------------------
+# Positions
+--------------------------------------------------------------*/
+/* Position on Page */
+.fix-to-page {
+  position: fixed;
+}
+
+.fix-to-parent {
+  position: absolute;
+}
+
+/* Stacking Order on Page */
+/*--------------------------------------------------------------
+# Size (relative to parent)
+--------------------------------------------------------------*/
+.full-width {
+  width: 100%;
+}
+
+.full-height {
+  height: 100%;
+}
+
+/*--------------------------------------------------------------
+# Appearance
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+# Animations
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+# Page Grid Setup
+--------------------------------------------------------------*/
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 1fr;
+  grid-template-areas: "header" "main" "footer";
+}
+
+header {
+  grid-area: header;
+}
+
+main {
+  grid-area: main;
+}
+
+footer {
+  grid-area: footer;
+}
+
+/*--------------------------------------------------------------
+# Page Sections Display Setup
+--------------------------------------------------------------*/
+header {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: space-evenly;
+  justify-items: center;
+  justify-content: space-between;
+}
+
+main {
   display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Undefined mixin.\a    \2577 \a 32 \2502    @include FlexRow(space-between);\a    \2502    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\a    \2575 \a   assets/sass/page-layout.scss 32:3  root stylesheet";
+}
+
+section,
+div {
+  box-sizing: border-box;
+  overflow: hidden;
+  margin: 0px;
+  padding: 0px;
+}
+
+footer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: space-evenly;
+  justify-items: center;
+  justify-content: space-between;
 }
