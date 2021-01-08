@@ -1,29 +1,25 @@
-@mixin RowContainer($justify: center) {
+@mixin FlexRow($justify: center) {
   display: flex;
   flex-direction: row;
-
-  // for each row
-  justify-items: $justify;
-  align-items: center;
-
-  // for multiple rows
   flex-wrap: wrap;
+
+  align-items: center;
   align-content: space-evenly;
-  justify-content: space-evenly;
+
+  justify-items: center;
+  justify-content: $justify;
 }
 
-@mixin ColContainer($justify: center) {
+@mixin FlexCol($justify: center) {
   display: flex;
   flex-direction: column;
-
-  // for each col
-  justify-items: $justify;
-  align-items: center;
-
-  // for multiple cols
   flex-wrap: wrap;
+
+  align-items: center;
   align-content: space-evenly;
-  justify-content: space-evenly;
+
+  justify-items: center;
+  justify-content: $justify;
 }
 
 @mixin topLeft($t: 0, $l: 0) {

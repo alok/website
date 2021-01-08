@@ -129,7 +129,14 @@
 # Animations
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
-# Page Setup
+# Reset Elements
+--------------------------------------------------------------*/
+body {
+  margin: 0px;
+}
+
+/*--------------------------------------------------------------
+# Page Grid Setup
 --------------------------------------------------------------*/
 html {
   height: 100%;
@@ -156,8 +163,22 @@ footer {
 }
 
 /*--------------------------------------------------------------
-# Page Sections
+# Page Sections Display Setup
 --------------------------------------------------------------*/
+header {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: space-evenly;
+  justify-items: center;
+  justify-content: space-between;
+}
+
+main {
+  display: block;
+}
+
 section,
 div {
   box-sizing: border-box;
@@ -166,33 +187,21 @@ div {
   padding: 0px;
 }
 
-/*--------------------------------------------------------------
-# Components
---------------------------------------------------------------*/
-.back-to-top {
-  position: fixed;
-  width: 40px;
-  height: 40px;
-  /* display: none; */
-  bottom: 2%;
-  right: 2%;
-  z-index: 99999;
-}
-.back-to-top i {
+footer {
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   align-items: center;
+  align-content: space-evenly;
+  justify-items: center;
   justify-content: center;
-  font-size: 24px;
-  width: 40px;
-  height: 40px;
-  border-radius: 50px;
-  background: #34b7a7;
-  color: #fff;
-  transition: all 0.4s;
 }
-.back-to-top i:hover {
-  background: #3dc8b7;
-  color: #fff;
+
+/*--------------------------------------------------------------
+# Styling
+--------------------------------------------------------------*/
+img {
+  vertical-align: center;
 }
 
 /*--------------------------------------------------------------
