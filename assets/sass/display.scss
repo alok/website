@@ -12,9 +12,14 @@
   max-width: 100%;
 
   overflow: scroll; //TODO remove?
-  text-align: left;
+  
+  text-align: center;
   vertical-align: middle;
   place-self: center center;
+}
+
+p {
+  text-align: left;
 }
 
 /*--------------------------------------------------------------
@@ -72,6 +77,10 @@ footer {
 .contact {
   @include FlexRow(center);
 }
+#back-to-top {
+  display: none; // invisible until scroll
+}
+
 
 // Header Components
 header {
@@ -86,19 +95,8 @@ header {
 
 // Main Components
 main {
-  section {
-    box-sizing: border-box;
-    overflow: hidden;
-    margin: 0px;
-    padding: 0px;
-  }
 }
 
 // Footer Components
 footer {
-  // .ocf {
-  //   display: inline-block;
-  // }
-  // .copyright {
-  // }
 }

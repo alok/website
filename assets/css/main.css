@@ -79,13 +79,6 @@
 # Animations
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
-# Reset Elements
---------------------------------------------------------------*/
-body {
-  margin: 0px;
-}
-
-/*--------------------------------------------------------------
 # Webfonts Setup
 --------------------------------------------------------------*/
 @font-face {
@@ -175,9 +168,13 @@ body {
   max-height: 100%;
   max-width: 100%;
   overflow: scroll;
-  text-align: left;
+  text-align: center;
   vertical-align: middle;
   place-self: center center;
+}
+
+p {
+  text-align: left;
 }
 
 /*--------------------------------------------------------------
@@ -254,19 +251,16 @@ footer {
   justify-content: center;
 }
 
+#back-to-top {
+  display: none;
+}
+
 header .logo {
   display: inline-block;
 }
 header .logo img {
   height: 1cm;
   width: 1cm;
-}
-
-main section {
-  box-sizing: border-box;
-  overflow: hidden;
-  margin: 0px;
-  padding: 0px;
 }
 
 /*--------------------------------------------------------------
@@ -411,16 +405,14 @@ footer {
 /*--------------------------------------------------------------
 # Buttons
 --------------------------------------------------------------*/
-.back-to-top {
+#back-to-top {
   position: fixed;
   bottom: 2%;
   right: 2%;
   width: 40px;
   height: 40px;
-  display: none;
-  z-index: 999999;
 }
-.back-to-top i {
+#back-to-top i {
   font-size: 24px;
   width: 40px;
   height: 40px;
@@ -429,7 +421,7 @@ footer {
   color: #fff;
   transition: all 0.4s;
 }
-.back-to-top i:hover {
+#back-to-top i:hover {
   background: #3dc8b7;
   color: #fff;
 }
@@ -441,8 +433,74 @@ footer {
 .fab {
   background-color: #b3b3b3;
   font-size: 24px;
-  text-align: center;
-  vertical-align: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50px;
+  transition: all 0.4s;
+}
+
+.fas:hover,
+.fab:hover {
+  position: relative;
+  top: -5px;
+  background: var(--palette--accent);
+}
+
+.fas:before,
+.fab:before {
+  color: #f2f5f3;
+  font-size: 32px;
+  line-height: 48px;
+}
+
+.fas:hover,
+.fab:hover {
+  position: relative;
+  top: -5px;
+}
+
+.fas.fa-youtube:hover,
+.fab.fa-youtube:hover {
+  background-color: #c4302b;
+}
+
+.fas.fa-facebook:hover,
+.fab.fa-facebook:hover {
+  background-color: #4267b2;
+}
+
+.fas.fa-instagram:hover,
+.fab.fa-instagram:hover {
+  background-color: #bc2a8d;
+  background: linear-gradient(45deg, #fccc63, #fbad50, #e95950, #cd486b, #bc2a8d, #8a3ab9, #4c68d7);
+}
+
+.fas.fa-envelope:hover,
+.fab.fa-envelope:hover {
+  background-color: #666666;
+}
+
+.fas.fa-arrow-up {
+  font-size: 24px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+  /* background: var(--palette--theme); */
+  /* color: #fff;
+    transition: all 0.4s;
+  }
+  .fas.fa-arrow-up:hover {
+    background: var(--palette--theme);
+    /* color: #fff; */
+}
+
+/*--------------------------------------------------------------
+# Icons
+--------------------------------------------------------------*/
+.fas,
+.fab {
+  background-color: #b3b3b3;
+  font-size: 24px;
   width: 48px;
   height: 48px;
   border-radius: 50px;
